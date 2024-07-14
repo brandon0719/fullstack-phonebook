@@ -37,9 +37,7 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :b
 
 app.use(cors())
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello World!</h1>");
-});
+app.use(express.static('dist'))
 
 app.get("/api/persons", (req, res) => {
   res.json(persons);
